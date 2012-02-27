@@ -25,6 +25,7 @@
 <input id="username" type="text" value=""/>
 <input id="create" type="submit" onclick="create();" value="Create User"/>
 <input id="read" type="submit" onclick="read();" value="Read User"/>
+<input id="delete" type="submit" onclick="read();" value="Delete User"/>
  
 <script type="text/javascript">
   function create() {
@@ -57,6 +58,24 @@
       fetchuser.fetch({
         success: function(model) {
           console.debug("We fetched the user from StackMob!");
+          console.debug(model.toJSON());
+        },
+        error: function(model, response) {
+          console.debug(response);
+        }
+      });
+    }
+ 
+  }
+  
+  function delete() {
+    var username = document.getElementById('username').value;
+    if (username != '') {
+      //Call StackMob via Ajax to read a user
+      var user = new StackMob.User({ 'username': username });
+      user.destroy({
+        success: function(model) {
+          console.debug("We deleted the user from StackMob!");
           console.debug(model.toJSON());
         },
         error: function(model, response) {
