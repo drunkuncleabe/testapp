@@ -72,7 +72,8 @@
     if (username != '') {
       //Call StackMob via Ajax to delete a user
       var user = new StackMob.User({ 'username': username });
-      user.destroy(success: function(model) {
+      user.destroy({
+	  success: function(model) {
           console.debug("We deleted the user from StackMob!");
           console.debug(model.toJSON());
         },
@@ -80,6 +81,7 @@
           console.debug(response);
         }
       });
+	}
    }
 </script>
  
