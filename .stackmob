@@ -1,0 +1,7 @@
+sm_app_name: testapp
+sm_client_name: abekinney
+html5: true
+ 
+development:
+  key: a23670ac-753e-4c10-ae09-89edf01b84d6
+  secret: 54e4fa34-5f98-4797-9b1d-1f2b6f0dd4d2
